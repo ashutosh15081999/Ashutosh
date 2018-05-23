@@ -1,0 +1,123 @@
+#a1{
+	overflow:hidden;
+	width:1200px;
+	margin:0px auto;
+}
+
+#a2{
+	float:left;
+} 
+
+#a4{
+	float:left;
+	margin-left:144px;
+	width:256px;
+	
+} 
+#a4 input{display: block;margin-bottom: 40px}
+#a11{
+     margin:0;
+	 padding:0;
+   }
+   
+#a9{
+     width:100%;
+	 height:100%;
+	 position:relative;
+	 background-image:url(cubes_structure_black_blue_120005_1366x768.jpg);
+	 background-size:cover;
+   }
+	  
+	   
+   
+#a10 p {
+	
+	position:absolute;
+	left:1%;
+	top:-40%;
+	
+}  
+#a10 p a{
+     
+      text-decoration:none;
+	  
+   }
+#a10 p sub{
+      font-size:50px;
+   }
+#a11{
+	
+	
+	
+}
+#a13{
+	
+	width:1400px;
+	margin:0px auto;
+	
+}
+#a14{
+	width:900px;
+	float:left;
+	background:blue;
+	
+}
+#a15{
+	width:500px;
+	float:left;
+	background:orange;
+	
+}
+
+
+@media screen and (max-width:1199px){
+	
+	 #a1{
+		 
+		 width:100%;
+		 
+	 }
+	 #a3{
+		 
+		 width:70%;
+		 
+	 }
+	  #a4{
+		 
+		 width:30%;
+		 
+	 }
+	 #a9{
+		 width:100%;
+		 
+	 }
+	 #a10{
+		 width:100%;
+		 
+	 }
+	 
+	
+	
+	 
+	 
+	
+	
+}
+@media screen and (max-width:1399px){
+  
+#a13{
+	
+	width:100%;
+	
+}
+#a14{
+	width:65%;
+	
+}
+#a15{
+	width:35%;
+	
+}
+  
+	
+}

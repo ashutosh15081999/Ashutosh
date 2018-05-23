@@ -1,0 +1,193 @@
+<! DOCTYPE html>
+
+<html>
+<head>
+<title>
+
+</title>
+<link type="text/css" rel="stylesheet" href="style.css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  .selected{ background-color: purple; font-weight: bold; color:white;}
+</style>
+
+
+</head>
+
+<body style="background-color:gray;">
+
+
+<div id="a1" style="background-color:blue;color:white;">
+   <div id="a2">
+      <table id="a3"; border="1"; width="800"; >
+	     <tr>
+		    
+			<th style="background-color:red; color:white;width:350;">NAME</th>
+			<th style="background-color:red; color:white;">BRANCH</th>
+			<th style="background-color:red; color:white;width:550;">COMMENTS</th>
+			<th style="background-color:red; color:white;">RATINGS</th>
+		 		 
+		 </tr>
+	  </table>
+   
+   
+   
+    </div>
+
+<div id="a4" >
+    NAME OF MANTEE: <input type="text"; value="ENTER NAME "; id="a5"; name="mname"; size="40";>
+	BRANCH: <input type="text" value="ENTER BRANCH" id="a6" name="bname" size="40">
+	COMMENTS <input type="text" value="ADD COMMENTS" id="a7" name="cname" size="40">
+	RATING <input type="text" value="RATE OUT OF 5" id="a8" name="rname" size="40">
+	
+	
+	<button onclick="addnewrow();">ADD </button>
+	<button onclick="editrow();">EDIT </button>
+	<button onclick="removerow();">REMOVE </button>
+	<button onclick="sorting();">SORT</button>
+   
+</div>
+</div>
+
+<script>
+
+var rnumb,
+    table = document.getElementById("a3");
+
+
+function addnewrow(){
+var newRow = table.insertRow(table.length),
+    c1 = newRow.insertCell(0),
+    c2 = newRow.insertCell(1),
+    c3 = newRow.insertCell(2),
+    c4 = newRow.insertCell(3),
+    manteename = document.getElementById("a5").value,
+    branch = document.getElementById("a6").value,
+    gen = document.getElementById("a7").value,
+    year = document.getElementById("a8").value;
+
+    c1.innerHTML = manteename;
+    c2.innerHTML = branch;
+    c3.innerHTML = gen;
+    c4.innerHTML = year;
+	
+	selectrow();
+
+}
+
+function selectrow(){
+
+
+for( var i=0; i< table.rows.length; i++){
+
+
+    table.rows[i].onclick=function()
+       {
+	   
+	      // if(typeof rnum !== "undefined"){
+		  //  table.rows[rnum].classList.toggle("selected");
+		 // }
+	   
+	   
+	   
+          rnum= this.rowIndex;
+		  //this.classList.toggle("selected"); 
+          document.getElementById("a5").value = this.cells[0].innerHTML;
+          document.getElementById("a6").value = this.cells[1].innerHTML;
+          document.getElementById("a7").value = this.cells[2].innerHTML;
+          document.getElementById("a8").value = this.cells[3].innerHTML;
+        }
+
+    }
+
+
+}
+
+function editrow(){
+
+var x = document.getElementById("a5").value,
+    y = document.getElementById("a6").value,
+    z = document.getElementById("a7").value,
+	w = document.getElementById("a8").value;
+	
+	table.rows[rnum].cells[0].innerHTML = x;
+    table.rows[rnum].cells[1].innerHTML = y;               
+    table.rows[rnum].cells[2].innerHTML = z;              
+    table.rows[rnum].cells[3].innerHTML = w;               
+
+}
+
+function removerow(){
+
+table.deleteRow(rnum);
+   document.getElementById("a5").value = "";
+   document.getElementById("a6").value = "";
+   document.getElementById("a7").value = "";
+   document.getElementById("a8").value = "";
+	
+
+
+
+}
+function sorting() {
+var i,j,a,b,c,d,k;
+   
+
+
+for( i=0; i< table.rows.length; i++){
+    for( j=i+1; j< (table.rows.length - 1); j++){
+        if( (table.rows[i+1].cells[3].innerHTML) > (table.rows[j+1].cells[3].innerHTML) ){
+	    a = (table.rows[i+1].cells[0].innerHTML);
+	    b = (table.rows[i+1].cells[1].innerHTML);
+		c = (table.rows[i+1].cells[2].innerHTML);
+		d = (table.rows[i+1].cells[3].innerHTML);
+		
+		(table.rows[i+1].cells[0].innerHTML) = (table.rows[j+1].cells[0].innerHTML);
+	    (table.rows[i+1].cells[1].innerHTML) = (table.rows[j+1].cells[1].innerHTML);
+		(table.rows[i+1].cells[2].innerHTML) = (table.rows[j+1].cells[2].innerHTML);
+		(table.rows[i+1].cells[3].innerHTML) = (table.rows[j+1].cells[3].innerHTML);
+		
+		(table.rows[j+1].cells[0].innerHTML) = a;
+		(table.rows[j+1].cells[1].innerHTML) = b;
+		(table.rows[j+1].cells[2].innerHTML) = c;
+		(table.rows[j+1].cells[3].innerHTML) = d;
+		
+	  
+	  }
+	
+    }
+
+}    
+
+
+}
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
